@@ -1,53 +1,19 @@
-// for (let Aryan = 0; Aryan < 100; Aryan++) {
-//     console.log("Hello Aryan")
-// } // This Loop Called For loop;
+//Qs. For a given array with prices of 5 items -> [250, 645, 300, 900, 50]
+//All items have an offer of 10% OFF on them. Change the array to store final price after applying offer.
 
-// // Here is Infite Loop Example
-// for (let Aryan = 0; Aryan >= 0; Aryan++) {
-//     console.log("Hello, Founder. Mr Aryan")
-// }
-// // Sorry but Don't Run this code in your System because it will create an infinite loop and your system will hang.😅
-// let a = 1;
-// while (a >= 0) {
-//     console.log("Hello, Mr.Aryan Sir 😊 your Ai is here!")
-// }
-// // It also an infinite loop so don't run this code in your system because it will create an infinite loop and your system will hang.😅
+//let's start
 
-// // Guy's here is an practice project for You to print 1 to 100, using any type og loop, and thaks for watching my ropository. 😊 
-// // here is solution of this project using for loop,
-// for (let Aryan = 0; Aryan < 100; Aryan++) {
-//     console.log(Aryan + "Welcome, Mr Aryan!")
-// }
+let array = [250, 645, 300, 900, 50]
+let i = 0
+for (let value of array) {
+    let offer = value / 10;
+    array[i] = array[i] - offer
+    console.log(`Value after offer ${array[i]}`)
+    i++
+}
 
-
-// for (let Aryan = 0; Aryan < 101; Aryan++) {
-//     console.log(Aryan + " Welcome, Mr Aryan")
-// }
-// for (let Aryan = 0; Aryan < 100; Aryan++) {
-//     console.log(Aryan + 1)
-// }
-// for (let Aryan = 0; Aryan < 100; Aryan++) {
-//  if (Aryan%2 === 0) {
-//     console.log("Number Value " + Aryan )
-//  }
-// }
-// // this loop for only even number form 0 to 100.
-//  for (let Aryan = 0; Aryan < 100; Aryan++) {
-//     if (Aryan%2 != 0) {
-//         console.log("Number Value " + Aryan)
-//     }
-//  }
-// // this loop for only odd number form 0 to 100.
-// // Q2.
-// let Numbers = 39;
-// let Guess = prompt("Enter Your Number!")
-// while (Guess != Numbers) {
-//     Guess = prompt("Your Guess Is Wrong! ❌ Try Again!")
-// }
-// console.log("Your Guess Is Correct! ✅ Congratulations!")
-// let number = "JavaScript";
-
-// for (const Aryan of number) {
-//     console.log(Aryan)
-// }
-
+let Companies = ["Bloomberg", "Microsoft", "Uber", "Google", "IBM", "Netflix"]
+console.log(Companies.shift())
+console.log(Companies.splice(1,1,"Ola"))
+console.log(Companies.push("Amazon"))
+console.log(Companies);
