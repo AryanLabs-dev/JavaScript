@@ -1,17 +1,15 @@
-// //Hey Now we're learnig about the DOM's in JS!
-// let h2 = document.querySelector("h2");
-// console.dir(h2.innerText);
-// h2.innerText = h2.innerText + " Apna College Student";
+// Practice Q1. 🟡
+// let div = document.createElement("h1")
+// div.innerHTML = "<i>Hello, Aryan sir!</i>"
+// document.querySelector("body").prepend(div)
 
-// let divs = document.querySelectorAll(".box");
-// divs[0].innerText = "New Unique Value 1"
-// divs[1].innerText = "New Unique Value 2"
-// divs[2].innerText = "New Unique Value 2"
+//Practice Q2. 🟢
+let div = document.createElement("button")
+div.innerHTML = "Click me"
+document.querySelector("body").prepend(div)
+div.style.color = "white"
+div.style.backgroundColor = "red"
 
-// IT also make it. like this!
-let divs = document.querySelectorAll(".box")
-let me = 1;
-for (div of divs) {
-    div.innerText = `New Unique Value ${me}`;
-    me++;
-}
+//Practice Q3. 🔴
+let parahs = document.querySelector("p")
+parahs.classList.add("content")
