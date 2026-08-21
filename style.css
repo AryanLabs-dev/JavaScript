@@ -1,10 +1,46 @@
-.pcontent{
-    border: 5px solid rgb(106, 255, 0);
-    font-weight: bolder;
+*{
+    padding: 0;
+    margin: 0;
+}
+.darkar {
+    background-color: black;
+    color: white;
     font-family: cursive;
+    font-weight: bolder;
 }
 
-.content{
-    color: blue;
-    background-color: rgb(255, 255, 141);
+.lighter {
+    background-color: white;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
+#btn {
+    box-shadow: -7px 6px 20px 2px rgb(0 0 0);
+    padding: 15px 105px;
+    display: flex;
+    background: linear-gradient(45deg, #ff6b6b, yellow, #6c5ce7);
+    border: none;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+#btn:hover {
+    padding: 13px 100px;
+    display: flex;
+    box-shadow: -7px 6px 20px 2px rgb(111, 92, 254);
+    background: linear-gradient(45deg, #ffea00f5, rgb(255, 175, 77), #05ffc4b7);
+    border: none;
+    border-radius: 20px;
+    font-weight: bolder;
+    font-family: cursive;
+    cursor: pointer;
+}
+
+.d {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 300px;
 }
