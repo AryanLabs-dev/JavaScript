@@ -1,44 +1,82 @@
-let mode = document.querySelector("#btn")
-let mymode = "lighter"
-let body = document.querySelector("body")
+let boxes = document.querySelectorAll(".box")
 
-mode.addEventListener("click", () => {
-    if (mymode === "lighter") {
-        mymode = "darkar"
-        document.body.classList.add("darkar")
-    }
-    else{
-        mymode = "lighter"
-        document.body.classList.remove("darkar")
-    }
-    console.log(mymode)
+let resetbtn = document.querySelector("#reset-btn")
+let newGameBtn = document.querySelector("#new-btn")
+
+let msgContainer = document.querySelector(".msg-container")
+let msg = document.querySelector("#msg")
+
+let turnO = true // playerX playerO
+
+const winPatterns = [
+    [0, 1, 2],
+    [0, 3, 6],
+    [0, 4, 8],
+    [1, 4, 7],
+    [2, 5, 8],
+    [2, 4, 6],
+    [3, 4, 5],
+    [6, 7, 8],
+]
+
+const resetGame = () => {
+    turnO = true
+    enableBoxes()
+    msgContainer.classList.add("hide")
+}
+
+boxes.forEach((box) => {
+    box.addEventListener("click", () => {
+
+        if (turnO) {
+            box.innerText = "O"
+            turnO = false
+        }
+        else {
+            box.innerText = "X"
+            turnO = true
+        }
+
+        box.disabled = true
+        checkWinner()
+    })
 })
 
- let dev = document.querySelector("btn");
-dev.addEventListener("click", () => {
-    console.log("You are trying to change mode")
+const disableBoxes = () => {
+    for (let box of boxes) {
+        box.disabled = true
+    }
+}
 
-})
+const enableBoxes = () => {
+    for (let box of boxes) {
+        box.disabled = false
+        box.innerText = ""
+    }
+}
 
-// let mode = document.querySelector("#btn")
+const showWinner = (winner) => {
+    msg.innerText = `Congratulations, Winner is ${winner}`
+    msgContainer.classList.remove("hide")
+    disableBoxes()
+}
 
-// let mymode = "lighter"
+const checkWinner = () => {
 
-// let body = document.querySelector("body")
+    for (let pattern of winPatterns) {
 
-// mode.addEventListener("click", () => {
+        let p1val = boxes[pattern[0]].innerText
+        let p2val = boxes[pattern[1]].innerText
+        let p3val = boxes[pattern[2]].innerText
 
-//     if (mymode === "lighter") {
+        if (p1val != "" && p2val != "" && p3val != "") {
 
-//         mymode = "darkar"
+            if (p1val === p2val && p2val === p3val) {
+                showWinner(p1val)
+            }
+        }
+    }
+}
 
-//         document.body.classList.add("darkar")
-//     }
-//     else {
-//         mymode = "lighter";
-
-//         document.body.classList.remove("darkar")
-//     }
-//     // console.log("You're trying to changing the mode")
-//     console.log(mymode)
-// })
+newGameBtn.addEventListener("click", resetGame)
+resetbtn.addEventListener("click", resetGame)
